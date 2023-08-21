@@ -1,0 +1,10 @@
+{
+    "id": "fusing_library",
+
+    "version": "v1.0.0",
+    "engineVer": "v0.8.0-dev",
+
+    "authors": [
+        "Simbel"
+    ]
+}
