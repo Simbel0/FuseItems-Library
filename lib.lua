@@ -34,7 +34,16 @@ Lib.fuseItemsList = {
 }
 
 function Lib:init()
-	print("Loaded FuseItems libray!")
+	print("Loaded FuseItems library!")
+	if Kristal.getLibConfig("fusing_library", "print_list_console") then
+		for i,recipe in ipairs(Lib.fuseItemsList) do
+			print(i.."- "..recipe["item1"].." + "..recipe["item2"].. " = "..recipe["result"])
+		end
+	end
+end
+
+function Lib:postInit()
+	Game:setFlag("fuse_items_data", {})
 end
 
 function Lib:setItemsList(item_list)
@@ -43,6 +52,15 @@ end
 
 function Lib:getItemsList()
 	return Lib.fuseItemsList
+end
+
+function Lib:reloadItemsList()
+	local menu = Game.world.menu
+	if menu and menu.param_list and menu.list then
+		menu:reloadItemsList()
+		return true
+	end
+	return false
 end
 
 return Lib

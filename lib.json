@@ -6,5 +6,11 @@
 
     "authors": [
         "Simbel"
-    ]
+    ],
+
+    "config": {
+        "cutscene": "fusing.placeholder",
+        "autofuse": false,
+        "print_list_console": true
+    }
 }
