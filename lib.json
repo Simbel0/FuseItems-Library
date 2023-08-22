@@ -10,7 +10,7 @@
 
     "config": {
         "cutscene": "fusing.placeholder",
-        "autofuse": false,
+        "autofuse": true,
         "print_list_console": false
     }
 }
