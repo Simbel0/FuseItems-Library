@@ -25,11 +25,6 @@ Lib.fuseItemsList = {
 		result = "tensionbow",
 		item1 = "bshotbowtie",
 		item2 = "tensionbit"
-	},
-	{
-		result = "twistedswd",
-		item1 = "thornring",
-		item2 = "purecrystal"
 	}
 }
 
