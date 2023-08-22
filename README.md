@@ -6,7 +6,7 @@ This library adds a menu that recreates the capacity to fuse two items into one 
 
 # Installation
 
-Download the latest version of the library and adds it into a folder called `libraries` in your mod's root folder. *(create the folder if it doesn't exist)*
+Download the [latest version](https://github.com/Simbel0/FuseItems-Library/releases/latest) of the library and adds it into a folder called `libraries` in your mod's root folder. *(create the folder if it doesn't exist)*
 
 ![Your mod's root folder](https://media.discordapp.net/attachments/755844178474303538/1143575387578839061/image.png)
 
