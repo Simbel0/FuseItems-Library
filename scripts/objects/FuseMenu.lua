@@ -335,7 +335,7 @@ function FuseMenu:draw()
 
 	hasItems = {false, false}
 
-	if 2+self.offset*2 < #self.list then
+	if 2+self.offset*2 <= #self.list then
 		item1 = self.list[2+self.offset*2]["item1"]
 		item2 = self.list[2+self.offset*2]["item2"]
 		result = self.list[2+self.offset*2]["result"]
