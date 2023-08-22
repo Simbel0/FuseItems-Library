@@ -165,16 +165,15 @@ function FuseMenu:update()
 					end
 					Game.world:closeMenu()
 					self:remove()
+					Game:setFlag("fuse_items_data", {
+						item1 = self.list[self.selected+self.offset*2]["item1"],
+						item2 = self.list[self.selected+self.offset*2]["item2"],
+						result = self.list[self.selected+self.offset*2]["result"]
+					})
 					if fuse then
 						Game.inventory:removeItem(self.param_list[self.selected+self.offset*2]["item1"])
 						Game.inventory:removeItem(self.param_list[self.selected+self.offset*2]["item2"])
 						Game.inventory:addItem(self.param_list[self.selected+self.offset*2]["result"])
-					else
-						Game:setFlag("fuse_items_data", {
-							item1 = self.list[self.selected+self.offset*2]["item1"],
-							item2 = self.list[self.selected+self.offset*2]["item2"],
-							result = self.list[self.selected+self.offset*2]["result"]
-						})
 					end
 					Game.world:startCutscene(cutscene)
 				else

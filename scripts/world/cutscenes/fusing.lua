@@ -11,9 +11,10 @@ return {
 		end
 	end,
 	placeholder = function(cutscene)
-		Game.inventory:removeItem(Game:getFlag("fuse_items_data")["item1"].id)
-		Game.inventory:removeItem(Game:getFlag("fuse_items_data")["item2"].id)
-		Game.inventory:addItem(Game:getFlag("fuse_items_data")["result"].id)
+		--Here is how you would make the fusion if autofuse was set to false
+		--Game.inventory:removeItem(Game:getFlag("fuse_items_data")["item1"].id)
+		--Game.inventory:removeItem(Game:getFlag("fuse_items_data")["item2"].id)
+		--Game.inventory:addItem(Game:getFlag("fuse_items_data")["result"].id)
 
 		cutscene:text("* Alright, I did it![wait:3] Enjoy your brand new "..Game:getFlag("fuse_items_data")["result"].name.."!")
 	end
