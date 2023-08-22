@@ -391,7 +391,7 @@ function FuseMenu:draw()
 	love.graphics.setColor(1, 1, 1)
 	love.graphics.print("Page "..(self.offset+1).." / "..math.ceil(#self.list/2), 532, 346, 0, 0.5, 1)
 
-	if self.state == "FUSE" then
+	if self.state == "FUSE" and #self.list > 2 then
 		love.graphics.setColor(1, 1, 1)
 		love.graphics.draw(self.left_arrow, self.arrows_x[1], 256, 0, 2, 2)
 		love.graphics.draw(self.right_arrow, self.arrows_x[2], 256, 0, 2, 2)
