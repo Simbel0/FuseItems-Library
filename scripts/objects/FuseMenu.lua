@@ -388,13 +388,31 @@ function FuseMenu:draw()
 		love.graphics.print(item2.name, 330, 343)
 	end
 
-	love.graphics.setColor(1, 1, 1)
-	love.graphics.print("Page "..(self.offset+1).." / "..math.ceil(#self.list/2), 532, 346, 0, 0.5, 1)
+	local print_pages = true
+	local print_arrows = true
+	if #self.list <= 2 then
+		local one_page_accuracy = Kristal.getLibConfig("fusing_library", "one_page_hide")
+		if one_page_accuracy == "all" then
+			print_pages = false
+			print_arrows = false
+		elseif one_page_accuracy == "pages" then
+			print_pages = false
+		elseif one_page_accuracy == "arrows" then
+			print_arrows = false
+		end
+	end
 
-	if self.state == "FUSE" and #self.list > 2 then
+	if print_pages then
 		love.graphics.setColor(1, 1, 1)
-		love.graphics.draw(self.left_arrow, self.arrows_x[1], 256, 0, 2, 2)
-		love.graphics.draw(self.right_arrow, self.arrows_x[2], 256, 0, 2, 2)
+		love.graphics.print("Page "..(self.offset+1).." / "..math.ceil(#self.list/2), 532, 346, 0, 0.5, 1)
+	end
+
+	if print_arrows then
+		if self.state == "FUSE" then
+			love.graphics.setColor(1, 1, 1)
+			love.graphics.draw(self.left_arrow, self.arrows_x[1], 256, 0, 2, 2)
+			love.graphics.draw(self.right_arrow, self.arrows_x[2], 256, 0, 2, 2)
+		end
 	end
 
 	if self.state == "CONFIRM" then
